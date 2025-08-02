@@ -6,10 +6,11 @@ import os
 
 app = Flask(__name__)
 
-# Load models from the models/ folder
-with open(os.path.join('..', 'models', 'diabetes_model.pkl'), 'rb') as f:
+# Load models from the models/ folder relative to this file
+with open(os.path.join('app', 'models', 'diabetes_model.pkl'), 'rb') as f:
     diabetes_model = pickle.load(f)
-with open(os.path.join('..', 'models', 'heart_model.pkl'), 'rb') as f:
+
+with open(os.path.join('app', 'models', 'heart_model.pkl'), 'rb') as f:
     heart_model = pickle.load(f)
 
 
@@ -72,7 +73,6 @@ def predict_heart():
 
     except Exception as e:
         return jsonify({'error': str(e)}), 400
-
 
 
 if __name__ == '__main__':
