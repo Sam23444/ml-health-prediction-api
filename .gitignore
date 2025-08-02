@@ -1,0 +1,14 @@
+ # python related
+
+ _pycache_/
+ .pyc
+ .pyo
+ .pyd
+ venv/
+ .venv/
+ .idea/
+ .DS_Store
+
+ models/*.pkl
+
+ .env
